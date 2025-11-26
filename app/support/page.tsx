@@ -12,7 +12,7 @@ export default function SupportPage() {
     },
     {
       question: 'How quickly can you repair a server?',
-      answer: 'Repair turnaround times vary depending on the issue and parts availability. Standard repairs typically take 3-5 business days, while emergency repairs can be completed within 24-48 hours. We\'ll provide an estimated timeline after diagnosis.',
+      answer: 'We offer two service levels: Operations Support and Repair Services. For Operations Support with 24/7, 4-hour SLA service, customers should maintain 5% spare equipment when purchasing devices, enabling rapid replacement to restore services. For Repair Services, standard parts have a turnaround time of 5-10 business days, while GPU cards or modules require 20-30 business days for repair.',
     },
     {
       question: 'Do you offer on-site support?',
