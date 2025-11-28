@@ -3,7 +3,8 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Menu, X, Server } from 'lucide-react'
+import Image from 'next/image'
+import { Menu, X } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 export default function Navbar() {
@@ -44,12 +45,15 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2 group">
-            <div className="relative">
-              <Server className="w-8 h-8 text-tech-blue group-hover:text-tech-cyan transition-colors" />
-              <div className="absolute inset-0 bg-tech-blue/20 blur-xl group-hover:bg-tech-cyan/20 transition-colors" />
-            </div>
-            <span className="text-2xl font-bold gradient-text">Velonix</span>
+          <Link href="/" className="flex items-center group">
+            <Image
+              src="/logo.png"
+              alt="Velonix AI"
+              width={200}
+              height={60}
+              className="h-14 w-auto transition-opacity group-hover:opacity-90"
+              priority
+            />
           </Link>
 
           {/* Desktop Navigation */}

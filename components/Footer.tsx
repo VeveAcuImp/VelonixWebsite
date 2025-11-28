@@ -1,5 +1,6 @@
 import Link from 'next/link'
-import { Server, Mail, Phone, MapPin } from 'lucide-react'
+import Image from 'next/image'
+import { Mail, Phone, MapPin } from 'lucide-react'
 
 export default function Footer() {
   return (
@@ -8,10 +9,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <div className="flex items-center space-x-2 mb-4">
-              <Server className="w-6 h-6 text-tech-blue" />
-              <span className="text-xl font-bold gradient-text">Velonix</span>
-            </div>
+            <Link href="/" className="flex items-center mb-4 group">
+              <Image
+                src="/logo.png"
+                alt="Velonix AI"
+                width={180}
+                height={54}
+                className="h-12 w-auto transition-opacity group-hover:opacity-90"
+              />
+            </Link>
             <p className="text-gray-400 text-sm">
               Your trusted partner for flexible and reliable AI compute power across Southeast Asia and Middle East.
               Providing AI infrastructure rental, maintenance, and support services in rapidly growing markets.
