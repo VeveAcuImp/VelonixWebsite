@@ -38,7 +38,7 @@ export default function SupportPage() {
       title: 'Phone Support',
       description: 'Call us for immediate assistance',
       contact: '+60 11-1057 3298',
-      hours: '24/7 Available',
+      hours: 'Mon-Fri, 9 AM - 6 PM',
       color: 'from-blue-500 to-cyan-500',
     },
     {
@@ -53,9 +53,10 @@ export default function SupportPage() {
       icon: MessageCircle,
       title: 'Live Chat',
       description: 'Chat with our support team in real-time',
-      contact: 'Available on website',
+      contact: 'Chat on WhatsApp',
       hours: 'Mon-Fri, 9 AM - 6 PM',
       color: 'from-indigo-500 to-blue-500',
+      link: 'https://api.whatsapp.com/send/?phone=601110573298',
     },
   ]
 
@@ -87,14 +88,13 @@ export default function SupportPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             {supportOptions.map((option, index) => {
               const Icon = option.icon
-              return (
+              const content = (
                 <motion.div
-                  key={option.title}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="glass rounded-xl p-8 text-center hover:bg-white/10 transition-all"
+                  className={`glass rounded-xl p-8 text-center transition-all ${option.link ? 'hover:bg-white/10 cursor-pointer' : ''}`}
                 >
                   <div className={`w-16 h-16 rounded-lg bg-gradient-to-br ${option.color} flex items-center justify-center mx-auto mb-6`}>
                     <Icon className="w-8 h-8 text-white" />
@@ -112,6 +112,22 @@ export default function SupportPage() {
                     {option.hours}
                   </p>
                 </motion.div>
+              )
+              
+              return option.link ? (
+                <a
+                  key={option.title}
+                  href={option.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block"
+                >
+                  {content}
+                </a>
+              ) : (
+                <div key={option.title}>
+                  {content}
+                </div>
               )
             })}
           </div>
